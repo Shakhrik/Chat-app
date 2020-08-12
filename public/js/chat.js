@@ -13,9 +13,9 @@ socket.on('message', (message,count)=>{
     console.log('Message:',message)
 })
 
-document.querySelector('#message').addEventListener('submit',(e)=>{
+document.querySelector('#message-form').addEventListener('submit',(e)=>{
     e.preventDefault()
     console.log('Sended');
-    const message = document.querySelector('input').value
+    const message = e.target.elements.message.value
     socket.emit('sendmessage', message)
 })
